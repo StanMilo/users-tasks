@@ -1,0 +1,42 @@
+<html>
+<head>
+</head>
+<body>
+	<form id="users_filter_form">
+		<div>
+			Select gender:
+			Male <input type="checkbox" name="gender" value="M" checked >
+			Female <input type="checkbox" name="gender" value="F" checked>
+		</div>
+		<div>
+			Age Min: <input type="number" name="age_min" value="18" min="18" max="100">
+		</div>
+		<div>
+			Sort By Age:
+			<select name="sort_by_age">
+			  <option value="ASC">ASC</option>
+			  <option value="DESC">DESC</option>
+			</select>
+		</div>
+		<br>
+		<div>
+			<input type="button" id="search_btn" value="Search">
+		</div>
+	</form>
+	<h1>Users List</h1>
+	<div id="users_list_wrapper"></div>
+
+	<script src="src/users/users-view.js"></script>
+	<script src="src/users/users-filter.js"></script>
+	<script src="src/users/users-list.js"></script>
+	<script src="src/users/users-controller.js"></script>
+	<script src="main.js"></script>
+	<!-- <script src="src/users-list.js"></script>
+	<script src="src/users-view.js"></script>
+	<script src="src/users-filters.js"></script>
+	<script src="src/main.js"></script> -->
+
+
+
+</body>
+</html>

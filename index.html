@@ -1,5 +1,6 @@
 <html>
 <head>
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<form id="users_filter_form">
@@ -23,20 +24,31 @@
 			<input type="button" id="search_btn" value="Search">
 		</div>
 	</form>
-	<h1>Users List</h1>
-	<div id="users_list_wrapper"></div>
-
+	<div class="left users_wrapper">
+		<h3>Users List</h3>
+		<div id="users_list_wrapper"></div>
+	</div>
+	<div class="left users_wrapper">
+		<h3>Selected user</h3>
+		<div id="single_user_wrapper"></div>
+	</div>
+	<div class="left users_wrapper">
+		<h3>Add Todo</h3>
+		<div id="js_todo_wrapper"></div>
+	</div>
+	<div class="left users_wrapper">
+		<h3>Todos list</h3>
+		<div id="js_todos_list_wrapper"></div>
+	</div>
+	<script src="src/pub-sub.js"></script>
+	<script src="src/todos/storage.js"></script>
+	<script src="src/todos/view.js"></script>
+	<script src="src/todos/controller.js"></script>
 	<script src="src/users/users-view.js"></script>
 	<script src="src/users/users-filter.js"></script>
 	<script src="src/users/users-list.js"></script>
 	<script src="src/users/users-controller.js"></script>
 	<script src="main.js"></script>
-	<!-- <script src="src/users-list.js"></script>
-	<script src="src/users-view.js"></script>
-	<script src="src/users-filters.js"></script>
-	<script src="src/main.js"></script> -->
-
-
 
 </body>
 </html>

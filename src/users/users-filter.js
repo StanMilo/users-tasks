@@ -25,7 +25,9 @@ const UsersFilter = () => {
 	}
 
 	const findById = (users, userId) => {
-		return users.find((user) => user.userId = userId)
+		return users.find((user) => {
+			return user.userId == userId
+		})
 	}
 
 	const expandUser = (users) => {

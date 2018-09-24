@@ -1,5 +1,6 @@
 const SEARCH_BTN_SELECTOR = '#search_btn'
-const searchBtnEl = document.querySelector(SEARCH_BTN_SELECTOR);
+const searchBtnEl = document.querySelector(SEARCH_BTN_SELECTOR)
+const USER_SELECTOR = '.show_single_user'
 
 class UsersController {
 
@@ -10,8 +11,20 @@ class UsersController {
   onSearchClick () {
     new UsersView()
       .render(this.filterUsers(USERS_LIST, this.getFormData()))
+
+    document.querySelectorAll(USER_SELECTOR).forEach((element) => {
+      element.addEventListener('click', this.onUserClick.bind(this))
+    })
   }
 
+  onUserClick (event) {
+    let userId = event.currentTarget.dataset.userId
+    let user = UsersFilter().findById(USERS_LIST, userId)
+    new UsersView().renderSingleUser(user)
+
+    PubSub.trigger('user_selected', [user])
+  }
+  
   getFormData () {
     return new FormData(document.getElementById('users_filter_form'))
   }
